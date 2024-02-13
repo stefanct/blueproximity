@@ -377,7 +377,7 @@ class ProximityGUI(object):
 
     # Callback to rename a config file.
     def dlgRenameDo_clicked(self, widget, data=None):
-        newconfig = self.wTree.get_widget("entryRenameName").get_text()
+        newconfig = self.wTree.get_object("entryRenameName").get_text()
         # check if something has been entered
         if newconfig == '':
             dlg = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
@@ -431,7 +431,7 @@ class ProximityGUI(object):
 
     # Callback to create a config file.
     def dlgNewDo_clicked(self, widget, data=None):
-        newconfig = self.wTree.get_widget("entryNewName").get_text()
+        newconfig = self.wTree.get_object("entryNewName").get_text()
 
         # check if something has been entered
         if (newconfig == ''):
@@ -827,7 +827,7 @@ class ProximityGUI(object):
         model, selection_iter = selection.get_selected()
         if (selection_iter):
             mac = self.model.get_value(selection_iter, 0)
-            self.wTree.get_widget("entryMAC").set_text(mac)
+            self.wTree.get_object("entryMAC").set_text(mac)
             self.writeSettings()
 
     # Callback that is executed when the scan for devices button is clicked
